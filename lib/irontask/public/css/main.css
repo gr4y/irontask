@@ -1,0 +1,103 @@
+body {
+  background: #ECECEC;
+  font-size: 16px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* IE < 8 */
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 2em;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+}
+
+.container .content {
+  max-width: 970px;
+  margin: 0 auto;
+  font-size: 1em;
+  /* TODO remove laterz */
+  /*outline: 1px solid pink;*/
+}
+
+.header.container .content {
+  background: #b65e34;
+  box-shadow: inset 0 -5px 5px -5px #666;
+}
+
+.header.container h1 {
+  margin: 0;
+  padding: 0.25em 0;
+  font-size: 4em;
+  text-align: center;
+  color: rgba(0,0,0,0.25);
+  text-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.list.container .content {
+  background: #FFF;
+}
+
+.list.container .tasks {
+  min-height: 100px;
+  -moz-transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+.list.container .tasks.loading {
+  width: 100%;
+  background-image: url('/images/ajax-loader.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.list.container .task {
+  font-size: 2em;
+  padding: 0.5em;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.list.container .task.undone {
+  color: #666;
+}
+
+.list.container .task.done {
+  text-decoration: line-through;
+}
+
+.list.container .new-task.input:focus {
+  border: 0;
+  outline: 0;
+}
+
+.list.container .new-task.input {
+  border: 0;
+  font-size: 2em;
+  padding: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;  
+  -moz-box-sizing: border-box;
+  border-bottom: 2px solid #CCC;
+}
