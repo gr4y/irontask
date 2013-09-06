@@ -2,7 +2,7 @@ module Irontask
 
   class App < NYNY::App
     use Rack::Static, 
-      :urls => ["/css", "/js", "/images", "/templates"],
+      :urls => ["/css", "/js", "/images", "/components"],
       :root => File.join(LIB_PATH, "public"),
       :index => "index.html"
 

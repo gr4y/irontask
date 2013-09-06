@@ -1,2 +1,14 @@
+pkg
+yard
+
 mongoid.yml
 config.ru
+
+# stuff we don't want to release with the gem
+**/components/**/.bower.json
+**/components/**/bower.json
+**/components/mustache/test
+**/components/mustache/wrappers
+
+./**/LICENSE.md
+./**/README.md

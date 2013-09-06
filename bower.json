@@ -1,0 +1,16 @@
+{
+  "name": "irontask",
+  "dependencies": {
+    "jquery": "latest",
+    "mustache": "latest",
+    "normalize-css": "latest"
+  },
+  "ignore": [
+    "tests",
+    "test",
+    "README.*",
+    "LICENSE.*",
+    "CHANGELOG",
+    ".gitignore"
+  ]
+}
