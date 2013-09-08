@@ -28,16 +28,19 @@ module Irontask
       Task.create(task)
     end
 
+    post '/task/update' do
+      task = Task.find(params[:id])
+      task.update_attributes(params[:task]);
+      task.save!
+    end
+
+    get '/task/:id' do
+      Task.find(params[:id])
+    end
+
     delete '/task/:id' do
       task = Task.find(params[:id])
       { :id => task.id, :is_deleted => task.remove }
-    end
-
-    post '/task/:id' do
-      task = Task.find(params[:id])
-      json_task = JSON.parse(params[:task])
-      task.update_attributes(json_task)
-      task
     end
 
   end
