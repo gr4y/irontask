@@ -24,8 +24,5 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "nyny", "~> 1.0.1"
   spec.add_runtime_dependency "mongoid", "~> 3.1.4"
-  # spec.add_runtime_dependency "tilt", "~> 1.4.1"
-  # spec.add_runtime_dependency "haml", "~> 4.0.3"
-  # spec.add_runtime_dependency "sinatra"
   spec.add_runtime_dependency "rack"
 end
