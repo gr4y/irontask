@@ -23,6 +23,7 @@ body {
   position: relative;
   width: 100%;
   padding-top: 2em;
+  padding-bottom: 12em;
 }
 
 .container {
@@ -57,15 +58,16 @@ body {
 }
 
 .list.container .tasks {
-  min-height: 100px;
   -moz-transition: height 0.5s;
   -webkit-transition: height 0.5s;
   -o-transition: height 0.5s;
   transition: height 0.5s;
+  border-bottom: 2px solid #CCC;
 }
 
 .list.container .tasks.loading {
   width: 100%;
+  min-height: 100px;
   background-image: url('/images/ajax-loader.gif');
   background-repeat: no-repeat;
   background-position: center center;
@@ -78,13 +80,65 @@ body {
   border-bottom: 1px solid #ECECEC;
 }
 
+.list.container .task .checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  height: 1em;
+  width: 1em;
+  float: left;
+  clear: left;
+}
+
+.list.container .task .checkbox::before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  color: #666;
+}
+.list.container .task .delete {
+  float: right;
+  color: #6f2c1f;
+  clear: right;
+
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+
+  background: transparent;
+  display: none;
+  border: 0;
+}
+
+.list.container .task:hover .delete {
+  border: 0;
+  background: transparent;
+  color: #6f2c1f;
+  display: block;
+}
+
+.list.container .task .delete::after {
+  content: '\f00d';
+  font-family: FontAwesome;
+}
+
 .list.container .task.undone {
   color: #666;
 }
 
-.list.container .task.done {
-  text-decoration: line-through;
+.list.container .task .description {
+  padding-left: 0.5em;
 }
+
+.list.container .task.done .description {
+  text-decoration: line-through;
+  color: #CCC;
+}
+
+.list.container .task.done .checkbox::before {
+  color: #99cc66;
+}
+
 
 .list.container .new-task.input:focus {
   border: 0;
@@ -97,7 +151,8 @@ body {
   padding: 0.5em;
   width: 100%;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;  
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  border-bottom: 2px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  padding-left: 2em;
 }

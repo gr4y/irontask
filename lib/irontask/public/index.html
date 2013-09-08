@@ -5,7 +5,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>irontask</title>
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
+    <!--if[ IE 7 ]>
+      <link rel="stylesheet" href="components/font-awesome/css/font-awesome-ie7.min.css">
+    <![endif] -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="author" href="humans.txt">
   </head>
@@ -21,15 +25,23 @@
 
       <section class="list container">
         <div class="content">
-          <div class="tasks loading"></div>
           <input id="new-task" class="new-task input" placeholder="What do have you to do?" type="text"> 
+          <div class="tasks loading"></div>
         </div>
       </section>
 
     </div>
 
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/jquery.loadTemplate-1.2.0.min.js"></script>
+    <script id="task-tpl" type="text/html">
+      <div id="task-{{ task.id }}" data-id="{{ task.id }}" class="task {{ task.class }}">
+        <input type="checkbox" class="checkbox" {{ task.checkbox_attributes }} />
+        <label class="description">{{ task.description }}</label>
+        <button class="delete" />
+      </div>
+    </script>
+
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/mustache/mustache.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
