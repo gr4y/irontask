@@ -1,4 +1,4 @@
-['json', 'sinatra', 'mongoid', 'tilt', 'haml', 'nyny'].each do |lib|
+['json', 'mongoid', 'nyny'].each do |lib|
   require lib
 end
 
