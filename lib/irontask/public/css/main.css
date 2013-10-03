@@ -89,6 +89,8 @@ body {
   width: 1em;
   float: left;
   clear: left;
+  border: none;
+  background: none;
 }
 
 .list.container .task .checkbox::before {
